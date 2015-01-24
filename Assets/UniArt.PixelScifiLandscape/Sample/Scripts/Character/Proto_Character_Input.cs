@@ -7,7 +7,9 @@ namespace UniArt.PixelScifiLandscape.Sample
     [AddComponentMenu("UniArt/PixelScifiLandscape/Sample/Character/Character_Input")]
     public class Proto_Character_Input : MonoBehaviour
     {
+        public Light gSpotLight;
         private InputControl left, right, up, down, jump, duck, shoot, shield, run;
+        private InputDevice spotLightController;
         private bool m_bJumpWasPressed;
 
         private bool m_bJump;
@@ -120,6 +122,8 @@ namespace UniArt.PixelScifiLandscape.Sample
                 shoot = InputManager.Devices[1].Action2;
                 shield = InputManager.Devices[0].Action2;
                 run = InputManager.Devices[0].Action3; // InputManager.Devices[0].RightTrigger has issues; see http://www.gallantgames.com/posts/27/details-on-the-xbox-360-controller-bug-in-unity
+
+                spotLightController = InputManager.Devices[2];
             }
 
          }
@@ -128,6 +132,7 @@ namespace UniArt.PixelScifiLandscape.Sample
         {
             UpdateRunInput();
             UpdateJumpInput();
+            UpdateLightInput();
         }
 
         private void UpdateJumpInput()
@@ -142,6 +147,12 @@ namespace UniArt.PixelScifiLandscape.Sample
         private void UpdateRunInput()
         {
             m_bRun = RunInput;
+        }
+
+        private void UpdateLightInput()
+        {
+            if (m_bHaveControllers)
+                gSpotLight.GetComponent<LightLookAt>().MoveLookAt(spotLightController.LeftStickX, spotLightController.LeftStickY);
         }
     }
 }
