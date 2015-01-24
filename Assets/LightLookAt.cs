@@ -9,6 +9,7 @@ public class LightLookAt : MonoBehaviour {
     public int MoveSpeed = 10;
     private Color[] cycleColors = { Color.yellow, Color.blue, Color.red, Color.white };
     private uint currentColorIndex = 0;
+
     //public Color Test;
     //public float TestX;
     //public float TestY;
@@ -70,4 +71,13 @@ public class LightLookAt : MonoBehaviour {
         //ChangeLightColor(Test);
         //MoveLookAt(TestX, TestY);
 	}
+
+    void OnTriggerEnter(Collider col)
+    {
+        if (col.gameObject.name.Contains("healer"))
+        {
+            Destroy(col);
+            Player.Instance().Heal(10f);
+        }
+    }
 }
