@@ -6,7 +6,9 @@ namespace UniArt.PixelScifiLandscape.Sample
 	[AddComponentMenu("UniArt/PixelScifiLandscape/Sample/Character/Character_CrouchController")]
 	public class Character_CrouchController : MonoBehaviour 
 	{
-		public Character_Input characterInput;
+
+        //public Character_Input characterInput;
+        public Proto_Character_Input characterInput;
 		
 		public Character_GroundedTester groundedTester;
 		

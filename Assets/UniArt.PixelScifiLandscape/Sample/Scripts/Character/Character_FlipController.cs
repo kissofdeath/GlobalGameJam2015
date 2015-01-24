@@ -7,8 +7,10 @@ namespace UniArt.PixelScifiLandscape.Sample
 	public class Character_FlipController : MonoBehaviour 
 	{
 		public Transform flipTransform;
-		
-		public Character_Input characterInput;
+
+
+        //public Character_Input characterInput;
+        public Proto_Character_Input characterInput;
 		
 		private void LateUpdate()
 		{

@@ -10,7 +10,8 @@ namespace UniArt.PixelScifiLandscape.Sample
 		
 		public Rigidbody2D rigidbodyComponent;
 		
-		public Character_Input characterInput;
+		//public Character_Input characterInput;
+        public Proto_Character_Input characterInput;
 		
 		public Character_GroundedTester groundedTester;
 		

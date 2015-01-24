@@ -13,8 +13,10 @@ namespace UniArt.PixelScifiLandscape.Sample
 		public System.Action<float> onClimb;
 		
 		public Character_MovementController movementController;
-		
-		public Character_Input characterInput;
+
+
+        //public Character_Input characterInput;
+        public Proto_Character_Input characterInput;
 		
 		public Character_LadderTester ladderTester;
 		

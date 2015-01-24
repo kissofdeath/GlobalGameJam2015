@@ -9,8 +9,10 @@ namespace UniArt.PixelScifiLandscape.Sample
 		public Animator animator;
 		
 		public Character_MovementController movementController;
-		
-		public Character_Input characterInput;
+
+
+        //public Character_Input characterInput;
+        public Proto_Character_Input characterInput;
 		
 		public Character_GroundedTester groundedTester;
 		
