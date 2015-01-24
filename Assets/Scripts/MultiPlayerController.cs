@@ -42,12 +42,11 @@ public class MultiPlayerController : MonoBehaviour {
 
         for (int ii = 0; ii < InputManager.Devices.Count; ii++ )
         {
-            InputDevice id = InputManager.Devices[ii];
-            Debug.Log(id);
-            //if (id.LeftStickX.HasChanged)
+            InputDevice id = InputManager.Devices[ii];            
+            
             if (id.Action1.WasPressed)
             {
-                Debug.Log("press detected");
+                //Debug.Log("press detected");
                 // skip device if it was already added
                 bool newDevice = true;
 
@@ -66,9 +65,11 @@ public class MultiPlayerController : MonoBehaviour {
                     m_bHaveControllers = true;
 
                     playerDevices[numPlayers] = id;
-                    Debug.Log("Player " + numPlayers + " has arrived");
+                    // Debug.Log("Player " + numPlayers + " has arrived");
                     numPlayers++;
                     MapControlsToActions();
+
+                    id.Vibrate(2f, 10f);
                 }
             }
         }                    	
@@ -77,7 +78,7 @@ public class MultiPlayerController : MonoBehaviour {
     // Called when a new player device is added
     void MapControlsToActions()
     {
-        Debug.Log("Mapping actions for " + numPlayers + " players");
+        // Debug.Log("Mapping actions for " + numPlayers + " players");
         // Partition the actions amongst the various players
         if (numPlayers == 1)
         {
@@ -91,7 +92,7 @@ public class MultiPlayerController : MonoBehaviour {
             jump            = p1.Action1;
             cycleLightColor = p1.Action2;
             shoot           = p1.Action3;
-            run             = p1.Action4;            
+            run             = p1.Action4;                       
         }
         else if (numPlayers == 2)
         {

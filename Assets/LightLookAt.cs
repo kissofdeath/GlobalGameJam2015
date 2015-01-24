@@ -9,6 +9,7 @@ public class LightLookAt : MonoBehaviour {
     public int MoveSpeed = 10;
     private Color[] cycleColors = { Color.yellow, Color.blue, Color.red, Color.green };
     private uint currentColorIndex = 0;
+    private Player klin;
 
     //public Color Test;
     //public float TestX;
@@ -62,6 +63,7 @@ public class LightLookAt : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         Target = TargetObject.transform.position;
+        klin = TargetObject.GetComponent<Player>();
 	}
 	
 	// Update is called once per frame
@@ -77,7 +79,7 @@ public class LightLookAt : MonoBehaviour {
         if (col.gameObject.name.Contains("healer") && cycleColors[currentColorIndex] == Color.green)
         {
             Destroy(col);
-            Player.Instance().Heal(10f);
+            klin.Heal(10f);
         }
     }
 }
