@@ -7,7 +7,8 @@ public class LightLookAt : MonoBehaviour {
     public GameObject TargetObject;
     public Camera TargetCamera;
     public int MoveSpeed = 10;
-    public Light ColorLight;
+    private Color[] cycleColors = { Color.yellow, Color.blue, Color.red, Color.white };
+    private uint currentColorIndex = 0;
     //public Color Test;
     //public float TestX;
     //public float TestY;
@@ -52,9 +53,9 @@ public class LightLookAt : MonoBehaviour {
         
     }
 
-    public void ChangeLightColor( Color newColor ){
+    public void CycleLightColor(){
 
-        ColorLight.color = newColor;
+        this.gameObject.light.color = cycleColors[currentColorIndex++ % cycleColors.Length];
     }
 
 	// Use this for initialization

@@ -8,7 +8,8 @@ namespace UniArt.PixelScifiLandscape.Sample
     public class Proto_Character_Input : MonoBehaviour
     {
         public Light gSpotLight;
-        private InputControl left, right, up, down, jump, duck, shoot, shield, run;
+        private LightLookAt lightLook;
+        private InputControl left, right, up, down, jump, duck, shoot, shield, run, cycleLightColor;
         private InputDevice spotLightController;
         private bool m_bJumpWasPressed;
 
@@ -83,7 +84,7 @@ namespace UniArt.PixelScifiLandscape.Sample
         {
             get
             {
-                return Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.LeftAlt) || Input.GetKey(KeyCode.RightAlt) || (m_bHaveControllers && jump);
+                return Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.LeftAlt) || Input.GetKey(KeyCode.RightAlt) || (m_bHaveControllers && jump.WasPressed);
             }
         }
 
@@ -124,6 +125,9 @@ namespace UniArt.PixelScifiLandscape.Sample
                 run = InputManager.Devices[0].Action3; // InputManager.Devices[0].RightTrigger has issues; see http://www.gallantgames.com/posts/27/details-on-the-xbox-360-controller-bug-in-unity
 
                 spotLightController = InputManager.Devices[2];
+                cycleLightColor = InputManager.Devices[1].Action3;
+
+                lightLook = gSpotLight.GetComponent<LightLookAt>();
             }
 
          }
@@ -152,7 +156,12 @@ namespace UniArt.PixelScifiLandscape.Sample
         private void UpdateLightInput()
         {
             if (m_bHaveControllers)
-                gSpotLight.GetComponent<LightLookAt>().MoveLookAt(spotLightController.LeftStickX, spotLightController.LeftStickY);
+            {
+                lightLook.MoveLookAt(spotLightController.LeftStickX, spotLightController.LeftStickY);
+                
+                if (cycleLightColor.WasPressed)
+                    lightLook.CycleLightColor();
+            }
         }
     }
 }
