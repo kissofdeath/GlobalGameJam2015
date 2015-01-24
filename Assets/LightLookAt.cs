@@ -39,6 +39,7 @@ public class LightLookAt : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        Target = TargetObject.transform.position;
         transform.LookAt(Target);
         //ChangeLightColor(Test);
         //MoveLookAt(TestX, TestY);
