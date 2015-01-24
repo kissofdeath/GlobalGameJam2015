@@ -34,7 +34,6 @@ class MassMaterialEditor : EditorWindow
                 {
 
                     SpriteRenderer r = gobj.GetComponent<SpriteRenderer>();
-                    Debug.Log(r);
                     
                     if (r != null && r.sharedMaterial.shader == src.shader)
                     {
@@ -43,6 +42,26 @@ class MassMaterialEditor : EditorWindow
                     }
                 }
 
+            }
+        }
+
+        if (GUILayout.Button("Find Probs"))
+        {
+            Debug.Log("Gonna go through the scene...");
+            // go through scene and edit replace src with dst on all applicable game objects
+            GameObject[] gobjs = GameObject.FindObjectsOfType<GameObject>();
+
+            Debug.Log(gobjs.Length);
+            foreach (GameObject gobj in gobjs)
+            {
+
+                SpriteRenderer r = gobj.GetComponent<SpriteRenderer>();
+
+                if (r != null && r.sharedMaterial == null)
+                {
+                    Debug.Log("Problem Found at " + r.gameObject.name);
+                    //r.sharedMaterial = dst;
+                }
             }
         }
     }

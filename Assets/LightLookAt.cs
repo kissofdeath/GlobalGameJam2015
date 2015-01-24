@@ -27,6 +27,31 @@ public class LightLookAt : MonoBehaviour {
 
     }
 
+    void UpdateLookAt(){
+
+        Vector3 viewPos = TargetCamera.camera.WorldToViewportPoint(Target);
+        //check for outside of viewport, don't update if it happens
+        if ( viewPos.x < 0.0f )
+        {
+            viewPos.x = 0.0f;
+        }
+        else if (viewPos.x > 1.0f)
+        {
+            viewPos.x = 1.0f;
+        }
+        if (viewPos.y < 0.0f)
+        {
+            viewPos.y = 0.0f;
+        }
+        else if (viewPos.y > 1.0f)
+        {
+            viewPos.y = 1.0f;
+        }
+
+        Target = TargetCamera.camera.ViewportToWorldPoint(viewPos);
+        
+    }
+
     public void ChangeLightColor( Color newColor ){
 
         ColorLight.color = newColor;
@@ -39,7 +64,7 @@ public class LightLookAt : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        Target = TargetObject.transform.position;
+        UpdateLookAt();
         transform.LookAt(Target);
         //ChangeLightColor(Test);
         //MoveLookAt(TestX, TestY);
