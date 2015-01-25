@@ -14,9 +14,9 @@ public class ProxiSpawner : MonoBehaviour {
     {
         if (!flag)
         {
-            flag = true;
             if (col.gameObject.name == "02.body" || col.gameObject.name == "01.bottom")
             {
+                flag = true;
                 InvokeRepeating("TurdDropper", 0.0f, TurretFireSpeed);
             }
         }
