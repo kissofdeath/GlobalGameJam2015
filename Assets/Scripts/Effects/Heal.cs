@@ -4,7 +4,7 @@ using System.Collections;
 public class Heal : MonoBehaviour {
     public float blastLength = 1f;
     public float healAmount = 10f;
-    public Player player;
+    public Player player; // set by RayController
 
     void OnEnable()
     {
@@ -27,8 +27,8 @@ public class Heal : MonoBehaviour {
     {
         if (c.gameObject.tag == "Player")
         {
-            Debug.Log("Healed player");            
-            player.Heal(healAmount);
+            Debug.Log("Healed player");
+            c.gameObject.GetComponentInParent<Player>().Heal(healAmount);
         }
     }
 

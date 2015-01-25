@@ -115,6 +115,7 @@ public class RayController : MonoBehaviour {
 
         effectSpawnPos.y += 4.67f * 0.5f; // prefab.collider2D.bounds.size.y returns 0 :-/
         Instantiate(prefab, effectSpawnPos, Quaternion.identity);
+        
 
         timeSinceLastUsed[(uint)curRayMode] = 0f;        
     }

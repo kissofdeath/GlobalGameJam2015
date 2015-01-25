@@ -86,7 +86,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blastLength: 1
   healAmount: 10
-  player: {fileID: 0}
+  player: {fileID: 106584, guid: 0e4e28af08166a04bb597dc6e2fcb0bb, type: 2}
 --- !u!212 &21205552
 SpriteRenderer:
   m_ObjectHideFlags: 1

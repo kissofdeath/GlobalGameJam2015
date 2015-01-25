@@ -96,10 +96,7 @@ namespace UniArt.PixelScifiLandscape.Sample
 
         void Start()
         {
-            m_ComboController = gameObject.GetComponent<MultiPlayerController>();
 
-            if (m_ComboController == null)
-                Debug.LogError("WTF");
         }      
 
         private void FixedUpdate()
