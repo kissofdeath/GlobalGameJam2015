@@ -50,8 +50,8 @@ public class MultiPlayerController : MonoBehaviour {
         {
             InputDevice id = InputManager.Devices[ii];            
             
-            if (id.Action1.WasPressed)
-            {
+            //if (id.Action1.WasPressed)
+            //{
                 //Debug.Log("press detected");
                 // skip device if it was already added
                 bool newDevice = true;
@@ -77,7 +77,7 @@ public class MultiPlayerController : MonoBehaviour {
 
                     id.Vibrate(2f, 10f);
                 }
-            }
+            //}
         }                    	
     }
 

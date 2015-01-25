@@ -6,6 +6,8 @@ public class Player : MonoBehaviour  {
     private float hp, maxhp;
     private Vector3 respawnPos;
     public MultiPlayerController mpc;
+    public GameObject platformSpawner;
+
 
 	void Start()
     {
@@ -45,6 +47,7 @@ public class Player : MonoBehaviour  {
         Time.timeScale = 0.5f;
         // add death animation
         transform.position = respawnPos;
+        platformSpawner.transform.position = respawnPos;
         Time.timeScale = 1.0f;
 
         hp = maxhp;
