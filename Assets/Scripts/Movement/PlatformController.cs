@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class BushMovement : MonoBehaviour {
+public class PlatformController : MonoBehaviour {
 
     public enum BushMode { HORZ_BUSH, VERT_BUSH };
     public BushMode CurrentBMode = BushMode.HORZ_BUSH;

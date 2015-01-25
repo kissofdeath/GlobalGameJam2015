@@ -3,14 +3,16 @@ using System.Collections;
 using InControl;
 
 public class MultiPlayerController : MonoBehaviour {
-    public InputControl left, right, up, down, 
-                         jump, duck, shoot, shield, run, cycleLightColor,
-                         lightX, lightY, bushX, bushY, growBush, ToggleBushDir;
-    public Light spotLight;
-    public BushMovement bushMove;
+    public InputControl left, right, up, down, jump, duck, run, 
+                        raysX, raysY/*not used for rays, used for light*/, changeRayMode, rainRays,
+                        platformX, platformY, plantPlatform, togglePlatformRot;
+
+    //public Light spotLight;
+    //private LightLookAt lightLook; // replacing light with ray
+    public RayController rays;
+    public PlatformController platform;
 
     private InputDevice[] playerDevices;
-    private LightLookAt lightLook;
     private bool m_bHaveControllers = false;
     private int numPlayers = 0;
     private int maxPlayers = 4;
@@ -27,14 +29,15 @@ public class MultiPlayerController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         playerDevices = new InputDevice[maxPlayers];
-        lightLook = spotLight.GetComponent<LightLookAt>();
+        //lightLook = spotLight.GetComponent<LightLookAt>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
         CheckForNewActivePlayer();
-        HandleSpotLightInput();
-        HandleTheBushInput();
+       // HandleSpotLightInput();
+        HandlePlatformInput();
+        HandleRayInput();
 	} 
 
 
@@ -89,13 +92,14 @@ public class MultiPlayerController : MonoBehaviour {
             InputDevice p1 = playerDevices[0];
             left = right    = p1.LeftStickX;
             up = down       = p1.LeftStickY;
-            lightX          = p1.RightStickX;
-            lightY          = p1.RightStickY;
+            raysX          = p1.RightStickX;
+            raysY          = p1.RightStickY; // not used
             
             run            = p1.LeftBumper;
             jump = p1.Action1;
-            cycleLightColor = p1.Action2;
-            shoot           = p1.Action3;
+            changeRayMode = p1.Action2;
+            rainRays = p1.Action3;
+           
             
         }
         else if (numPlayers == 2)
@@ -107,10 +111,10 @@ public class MultiPlayerController : MonoBehaviour {
             run = p1.LeftBumper;
             jump = p1.Action1;
 
-            bushX = p2.LeftStickX;
-            bushY = p2.LeftStickY;
-            growBush = p2.Action2;
-            ToggleBushDir = p2.Action3;
+            platformX = p2.LeftStickX;
+            platformY = p2.LeftStickY;
+            plantPlatform = p2.Action2;
+            togglePlatformRot = p2.Action3;
 
             //shoot           = p2.Action1;
             //cycleLightColor = p2.Action2;
@@ -127,17 +131,18 @@ public class MultiPlayerController : MonoBehaviour {
 
             left = right    = p1.LeftStickX;
             up = down       = p1.LeftStickY;
-            run = p1.LeftBumper;
-            jump = p1.Action1;
+            run             = p1.LeftBumper;
+            jump            = p1.Action1;
 
-            bushX = p2.LeftStickX;
-            bushY = p2.LeftStickY;
-            growBush = p2.Action2;
-            ToggleBushDir = p2.Action3;
+            platformX       = p2.LeftStickX;
+            platformY       = p2.LeftStickY;
+            plantPlatform   = p2.Action2;
+            togglePlatformRot = p2.Action3;
 
-            lightX          = p3.LeftStickX;
-            lightY          = p3.LeftStickY;           
-            cycleLightColor = p3.Action1;
+            raysX          = p3.LeftStickX;
+            raysY          = p3.LeftStickY;           
+            changeRayMode  = p3.Action1;
+            rainRays       = p3.Action2;
 
         }
         else if (numPlayers == 4)
@@ -146,41 +151,59 @@ public class MultiPlayerController : MonoBehaviour {
                         p3 = playerDevices[2], p4 = playerDevices[3];
 
             left = right    = p1.LeftStickX;
-            cycleLightColor = p1.Action1;
+            changeRayMode = p1.Action1;
 
-            up = down       = p2.LeftStickY;            
-            shoot = p2.Action1;
+            up = down       = p2.LeftStickY;
+            changeRayMode   = p2.Action1;
             
-            lightX = p3.RightStickX;
-            lightY = p3.RightStickY;
+            raysX = p3.RightStickX;
+            raysY = p3.RightStickY;
 
             jump = p4.Action1;
             run = p2.Action2;
         }      
     }
 
-    private void HandleSpotLightInput()
-    {
-        if (m_bHaveControllers)
-        {
-            lightLook.MoveLookAt(lightX, lightY);
+    //private void HandleSpotLightInput()
+    //{
+    //    if (m_bHaveControllers)
+    //    {
+    //        lightLook.MoveLookAt(raysX, raysY);
 
-            if (cycleLightColor.WasPressed)
-                lightLook.CycleLightColor();
-        }
-    }
+    //        if (rayMode.WasPressed)
+    //            lightLook.CycleLightColor();
+    //    }
+    //}
 
-    private void HandleTheBushInput()
+    private void HandlePlatformInput()
     {
         if (m_bHaveControllers && numPlayers > 1)
         {
-            bushMove.ProcessInput(bushX, bushY);
+            platform.ProcessInput(platformX, platformY);
 
-            if (growBush.WasPressed)
-                bushMove.GrowBush();
+            if (plantPlatform.WasPressed)
+                platform.GrowBush();
 
-            if (ToggleBushDir.WasPressed)
-                bushMove.ToggleBushMode();
+            if (togglePlatformRot.WasPressed)
+                platform.ToggleBushMode();
         }
     }
+
+
+
+    private void HandleRayInput()
+    {
+        if (m_bHaveControllers && numPlayers > 0)
+        {
+            rays.ProcessInput(raysX);
+
+            if (changeRayMode)
+                rays.CycleRayMode();
+
+            if (rainRays.WasPressed)
+                rays.LetItRain();
+        }
+    }
+
+
 }
