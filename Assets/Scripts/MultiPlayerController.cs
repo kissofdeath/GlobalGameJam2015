@@ -140,7 +140,7 @@ public class MultiPlayerController : MonoBehaviour {
             cycleLightColor = p3.Action1;
 
         }
-        else 
+        else if (numPlayers == 4)
         {
             InputDevice p1 = playerDevices[0], p2 = playerDevices[1], 
                         p3 = playerDevices[2], p4 = playerDevices[3];
