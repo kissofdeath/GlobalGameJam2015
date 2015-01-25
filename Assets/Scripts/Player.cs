@@ -19,6 +19,16 @@ public class Player : MonoBehaviour  {
         Debug.Log("healed player");
     }
 
+    public void Damage(float delta)
+    {
+        hp -= delta;
+        Mathf.Clamp(hp, 0f, 100f);
+        Debug.Log("damaged player");
+
+        if (hp == 0)
+            Respawn();
+    }
+
     public void Respawn()
     {
         transform.position = respawnPos;

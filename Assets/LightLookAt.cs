@@ -70,7 +70,6 @@ public class LightLookAt : MonoBehaviour {
 	void Update () {
         UpdateLookAt();
         transform.LookAt(Target);
-        //ChangeLightColor(Test);
         //MoveLookAt(TestX, TestY);
 	}
 
