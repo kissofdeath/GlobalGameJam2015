@@ -10,13 +10,16 @@ GameObject:
   - 4: {fileID: 496958}
   - 212: {fileID: 21296958}
   - 95: {fileID: 9596958}
+  - 61: {fileID: 6165364}
+  - 114: {fileID: 11465364}
+  - 111: {fileID: 11165364}
   m_Layer: 0
   m_Name: cloud.bush.transportation.magical.carpet.device 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &496958
 Transform:
   m_ObjectHideFlags: 1
@@ -29,6 +32,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!61 &6165364
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 196958}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Size: {x: .600000024, y: .219999999}
+  m_Center: {x: 0, y: 0}
 --- !u!95 &9596958
 Animator:
   serializedVersion: 3
@@ -44,6 +58,32 @@ Animator:
   m_ApplyRootMotion: 1
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!111 &11165364
+Animation:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 196958}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 1ac0b48984a0e914b8f7010934e58572, type: 2}
+  m_Animations: []
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
+--- !u!114 &11465364
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 196958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74a89b29f1c917e4da8e3e002191d878, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stepTimeout: 5
 --- !u!212 &21296958
 SpriteRenderer:
   m_ObjectHideFlags: 1

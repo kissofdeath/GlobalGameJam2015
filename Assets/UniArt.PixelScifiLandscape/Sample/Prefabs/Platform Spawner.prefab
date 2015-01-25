@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 162522}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: .465000004, y: -.267399997, z: 0}
-  m_LocalScale: {x: .354136586, y: .136301517, z: .354136825}
+  m_LocalScale: {x: .354136586, y: .340000004, z: .354136825}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -52,11 +52,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f69e2ee9a2c27e4194a2c6b28ff6241, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CurrentBMode: 0
   moveSpeed: 2.5
   steps:
-  - {fileID: 158222, guid: 64e0397eb629db84e8e654b639a127ed, type: 2}
-  - {fileID: 158222, guid: 64e0397eb629db84e8e654b639a127ed, type: 2}
-  - {fileID: 158222, guid: 64e0397eb629db84e8e654b639a127ed, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!212 &21262522
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -69,7 +70,7 @@ SpriteRenderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 2100000, guid: 01c18d92653db2a4ead62bdefaa48f68, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -77,7 +78,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300030, guid: acd319665a8dd5f449caf9bd4ece2923, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 89987a983d3117e4abfc46295e660e59, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:

@@ -1,0 +1,157 @@
+fileFormatVersion: 2
+guid: eafe0262d269b04418f8ba57b427ffea
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: forcefield_0
+    21300002: forcefield_1
+    21300004: forcefield_2
+    21300006: forcefield_3
+    21300008: forcefield_4
+    21300010: forcefield_5
+    21300012: forcefield_6
+    21300014: forcefield_7
+    21300016: forcefield_8
+    21300018: forcefield_9
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: forcefield_0
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 54
+        width: 79
+        height: 467
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: forcefield_1
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 54
+        width: 99
+        height: 467
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: forcefield_2
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 54
+        width: 98
+        height: 467
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: forcefield_3
+      rect:
+        serializedVersion: 2
+        x: 470
+        y: 54
+        width: 109
+        height: 467
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: forcefield_4
+      rect:
+        serializedVersion: 2
+        x: 619
+        y: 54
+        width: 97
+        height: 467
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: forcefield_5
+      rect:
+        serializedVersion: 2
+        x: 756
+        y: 54
+        width: 93
+        height: 467
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: forcefield_6
+      rect:
+        serializedVersion: 2
+        x: 895
+        y: 54
+        width: 92
+        height: 467
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: forcefield_7
+      rect:
+        serializedVersion: 2
+        x: 1030
+        y: 54
+        width: 90
+        height: 467
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: forcefield_8
+      rect:
+        serializedVersion: 2
+        x: 1161
+        y: 54
+        width: 91
+        height: 467
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: forcefield_9
+      rect:
+        serializedVersion: 2
+        x: 1294
+        y: 56
+        width: 90
+        height: 467
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
