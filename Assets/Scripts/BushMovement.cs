@@ -3,6 +3,8 @@ using System.Collections;
 
 public class BushMovement : MonoBehaviour {
 
+    public enum BushMode { HORZ_BUSH, VERT_BUSH };
+    public BushMode CurrentBMode = BushMode.HORZ_BUSH;
     public float moveSpeed = 5f;
     public GameObject[] steps;
     private int lastStepIndex = 0;   
@@ -18,11 +20,29 @@ public class BushMovement : MonoBehaviour {
 
     }
 
-
+    public void ToggleBushMode()
+    {
+        switch (CurrentBMode)
+        {
+            case BushMode.HORZ_BUSH:
+                CurrentBMode = BushMode.VERT_BUSH;
+                transform.Rotate(0, 0, 90);
+                break;
+            case BushMode.VERT_BUSH:
+                CurrentBMode = BushMode.HORZ_BUSH;
+                transform.Rotate(0, 0, -90);
+                break;
+        }
+    }
 
     public void ProcessInput(float x, float y)
     {
-       Vector3 tmpPos = transform.position;
+        if (CurrentBMode == BushMode.VERT_BUSH)
+        {
+            transform.Rotate(0, 0, -90);
+        }
+        
+        Vector3 tmpPos = transform.position;
         tmpPos += x * transform.right * moveSpeed * Time.deltaTime;
         tmpPos += y * transform.up * moveSpeed * Time.deltaTime;
 
@@ -46,6 +66,12 @@ public class BushMovement : MonoBehaviour {
         }
 
         transform.position = Camera.main.ViewportToWorldPoint(viewPos);
+
+        if (CurrentBMode == BushMode.VERT_BUSH)
+        {
+            transform.Rotate(0, 0, 90);
+        }
+
     }
 
 
@@ -55,6 +81,12 @@ public class BushMovement : MonoBehaviour {
         {
             steps[lastStepIndex].SetActive(true);
             steps[lastStepIndex].transform.position = this.transform.position;
+            steps[lastStepIndex].transform.rotation = Quaternion.identity;
+
+            if (CurrentBMode == BushMode.VERT_BUSH)
+            {
+                steps[lastStepIndex].transform.Rotate(0, 0, 90);
+            }
 
             lastStepIndex++;
             lastStepIndex %= steps.Length;

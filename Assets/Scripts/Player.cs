@@ -5,6 +5,7 @@ public class Player : MonoBehaviour  {
     public GUIBarScript healthBar;
     private float hp, maxhp;
     private Vector3 respawnPos;
+    public MultiPlayerController mpc;
 
 	void Start()
     {
@@ -32,7 +33,11 @@ public class Player : MonoBehaviour  {
         Debug.Log("damaged player");
 
         if (hp <= 0)
+        {
+            if (mpc != null)
+                mpc.MapControlsToActions();
             Respawn();
+        }
     }
 
     public void Respawn()

@@ -5,7 +5,7 @@ using InControl;
 public class MultiPlayerController : MonoBehaviour {
     public InputControl left, right, up, down, 
                          jump, duck, shoot, shield, run, cycleLightColor,
-                         lightX, lightY, bushX, bushY, growBush;
+                         lightX, lightY, bushX, bushY, growBush, ToggleBushDir;
     public Light spotLight;
     public BushMovement bushMove;
 
@@ -14,6 +14,7 @@ public class MultiPlayerController : MonoBehaviour {
     private bool m_bHaveControllers = false;
     private int numPlayers = 0;
     private int maxPlayers = 4;
+    private int[] ThreePlayerPermute  = new int[18] { 0, 1, 2,  0, 2, 1,  1, 0, 2,  1, 2, 0,  2, 0, 1,  2, 1, 0 };
 
     public bool HaveControllers
     {
@@ -78,7 +79,7 @@ public class MultiPlayerController : MonoBehaviour {
     }
 
     // Called when a new player device is added
-    void MapControlsToActions()
+    public void MapControlsToActions()
     {
         // Debug.Log("Mapping actions for " + numPlayers + " players");
         // Partition the actions amongst the various players
@@ -109,6 +110,7 @@ public class MultiPlayerController : MonoBehaviour {
             bushX = p2.LeftStickX;
             bushY = p2.LeftStickY;
             growBush = p2.Action2;
+            ToggleBushDir = p2.Action3;
 
             //shoot           = p2.Action1;
             //cycleLightColor = p2.Action2;
@@ -119,21 +121,23 @@ public class MultiPlayerController : MonoBehaviour {
         }
         else if (numPlayers == 3)
         {
-            InputDevice p1 = playerDevices[0], p2 = playerDevices[1], p3 = playerDevices[2];
+            int RandVal = Random.Range(0, 6);
+            RandVal *= 3;
+            InputDevice p1 = playerDevices[ThreePlayerPermute[RandVal++]], p2 = playerDevices[ThreePlayerPermute[RandVal++]], p3 = playerDevices[ThreePlayerPermute[RandVal]];
 
             left = right    = p1.LeftStickX;
             up = down       = p1.LeftStickY;
             run = p1.LeftBumper;
-            cycleLightColor = p1.Action1;
+            jump = p1.Action1;
 
             bushX = p2.LeftStickX;
             bushY = p2.LeftStickY;
             growBush = p2.Action2;
+            ToggleBushDir = p2.Action3;
 
             lightX          = p3.LeftStickX;
-            lightY          = p3.LeftStickY;
-            jump            = p3.Action1;
-            cycleLightColor = p3.Action2;
+            lightY          = p3.LeftStickY;           
+            cycleLightColor = p3.Action1;
 
         }
         else 
@@ -174,6 +178,9 @@ public class MultiPlayerController : MonoBehaviour {
 
             if (growBush.WasPressed)
                 bushMove.GrowBush();
+
+            if (ToggleBushDir.WasPressed)
+                bushMove.ToggleBushMode();
         }
     }
 }
