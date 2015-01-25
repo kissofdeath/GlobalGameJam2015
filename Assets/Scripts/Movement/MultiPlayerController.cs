@@ -131,18 +131,18 @@ public class MultiPlayerController : MonoBehaviour {
 
             left = right    = p1.LeftStickX;
             up = down       = p1.LeftStickY;
-            run             = p1.Action3;
+            run             = p1.LeftBumper;
             jump            = p1.Action1;
 
             platformX       = p2.LeftStickX;
-            platformY       = p2.LeftStickY;            
+            platformY       = p2.LeftStickY;
+            plantPlatform   = p2.Action2;
             togglePlatformRot = p2.Action3;
-            plantPlatform = p2.Action1;
 
             raysX          = p3.LeftStickX;
             raysY          = p3.LeftStickY;           
-            changeRayMode  = p3.Action3;
-            rainRays       = p3.Action1;
+            changeRayMode  = p3.Action1;
+            rainRays       = p3.Action2;
 
         }
         else if (numPlayers == 4)
