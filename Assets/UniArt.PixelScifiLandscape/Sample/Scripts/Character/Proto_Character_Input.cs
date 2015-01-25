@@ -8,6 +8,7 @@ namespace UniArt.PixelScifiLandscape.Sample
     public class Proto_Character_Input : MonoBehaviour
     {
         public MultiPlayerController m_ComboController;
+        public float verticalThreshold;
 
         private bool m_bJumpWasPressed;
 
@@ -63,12 +64,12 @@ namespace UniArt.PixelScifiLandscape.Sample
             get
             {
                 float fValue = 0.0f;
-                if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S) || (m_ComboController.HaveControllers && m_ComboController.down < 0))
+                if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S) || (m_ComboController.HaveControllers && m_ComboController.down < -verticalThreshold))
                 {
                     fValue -= 1.0f;
                 }
 
-                if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.Z) || Input.GetKey(KeyCode.W) || (m_ComboController.HaveControllers && m_ComboController.up > 0))
+                if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.Z) || Input.GetKey(KeyCode.W) || (m_ComboController.HaveControllers && m_ComboController.up > verticalThreshold))
                 {
                     fValue += 1.0f;
                 }

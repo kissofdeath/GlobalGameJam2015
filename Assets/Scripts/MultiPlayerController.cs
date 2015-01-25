@@ -5,8 +5,9 @@ using InControl;
 public class MultiPlayerController : MonoBehaviour {
     public InputControl left, right, up, down, 
                          jump, duck, shoot, shield, run, cycleLightColor,
-                         lightX, lightY;
+                         lightX, lightY, bushX, bushY, growBush;
     public Light spotLight;
+    public BushMovement bushMove;
 
     private InputDevice[] playerDevices;
     private LightLookAt lightLook;
@@ -32,6 +33,7 @@ public class MultiPlayerController : MonoBehaviour {
 	void Update () {
         CheckForNewActivePlayer();
         HandleSpotLightInput();
+        HandleTheBushInput();
 	} 
 
 
@@ -65,7 +67,7 @@ public class MultiPlayerController : MonoBehaviour {
                     m_bHaveControllers = true;
 
                     playerDevices[numPlayers] = id;
-                    // Debug.Log("Player " + numPlayers + " has arrived");
+                    Debug.Log("Player " + numPlayers + " has arrived");
                     numPlayers++;
                     MapControlsToActions();
 
@@ -89,10 +91,11 @@ public class MultiPlayerController : MonoBehaviour {
             lightX          = p1.RightStickX;
             lightY          = p1.RightStickY;
             
-            jump            = p1.Action1;
+            run            = p1.LeftBumper;
+            jump = p1.Action1;
             cycleLightColor = p1.Action2;
             shoot           = p1.Action3;
-            run             = p1.Action4;                       
+            
         }
         else if (numPlayers == 2)
         {
@@ -100,29 +103,38 @@ public class MultiPlayerController : MonoBehaviour {
 
             left = right    =  p1.LeftStickX;
             up = down       = p1.LeftStickY;
-            shoot           = p2.Action1;
-            cycleLightColor = p1.Action2;
+            run = p1.LeftBumper;
+            jump = p1.Action1;
 
-            lightX          = p2.LeftStickX;
-            lightY          = p2.LeftStickY;
-            jump            = p2.Action1;         
-            run             = p2.Action2;
+            bushX = p2.LeftStickX;
+            bushY = p2.LeftStickY;
+            growBush = p2.Action2;
+
+            //shoot           = p2.Action1;
+            //cycleLightColor = p2.Action2;
+
+            //lightX          = p2.LeftStickX;
+            //lightY          = p2.LeftStickY;
+            
         }
         else if (numPlayers == 3)
         {
             InputDevice p1 = playerDevices[0], p2 = playerDevices[1], p3 = playerDevices[2];
 
             left = right    = p1.LeftStickX;
+            up = down       = p1.LeftStickY;
+            run = p1.LeftBumper;
             cycleLightColor = p1.Action1;
 
-            up = down       = p2.LeftStickY;
-            run = p2.Action1;
-            shoot = p2.Action2;
-
+            bushX = p2.LeftStickX;
+            bushY = p2.LeftStickY;
+            growBush = p2.Action2;
 
             lightX          = p3.LeftStickX;
             lightY          = p3.LeftStickY;
-            jump = p3.Action1;                     
+            jump            = p3.Action1;
+            cycleLightColor = p3.Action2;
+
         }
         else 
         {
@@ -151,6 +163,17 @@ public class MultiPlayerController : MonoBehaviour {
 
             if (cycleLightColor.WasPressed)
                 lightLook.CycleLightColor();
+        }
+    }
+
+    private void HandleTheBushInput()
+    {
+        if (m_bHaveControllers && numPlayers > 1)
+        {
+            bushMove.ProcessInput(bushX, bushY);
+
+            if (growBush.WasPressed)
+                bushMove.GrowBush();
         }
     }
 }

@@ -11,13 +11,12 @@ public class PikeColliderListener : MonoBehaviour {
         player = klin.GetComponent<Player>();
     }
 
-    void OnTriggerEnter2D(Collider2D c)
+    void OnCollisionStay2D(Collision2D c)
     {
-        Debug.Log("in pike collider triger");
         if (c.gameObject.name.Contains("pike"))
         {
-            
-            player.Damage(Time.deltaTime * 50f);
+            player.Damage(25f * Time.deltaTime);
+            //player.Respawn();  
         }
     }
 }

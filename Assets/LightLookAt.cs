@@ -55,9 +55,12 @@ public class LightLookAt : MonoBehaviour {
         
     }
 
-    public void CycleLightColor(){
-
-        this.gameObject.light.color = cycleColors[currentColorIndex++ % cycleColors.Length];
+    public void CycleLightColor()
+    {        
+        currentColorIndex++;
+        currentColorIndex %= (uint) cycleColors.Length;
+        this.gameObject.light.color = cycleColors[currentColorIndex];
+        
     }
 
 	// Use this for initialization
@@ -73,12 +76,16 @@ public class LightLookAt : MonoBehaviour {
         //MoveLookAt(TestX, TestY);
 	}
 
-    void OnTriggerEnter(Collider col)
+    void OnTriggerStay(Collider col)
+//    void OnCollisionEnter(Collision col)
     {
+        //Debug.Log("Col on light called");
         if (col.gameObject.name.Contains("healer") && cycleColors[currentColorIndex] == Color.green)
         {
+            klin.Heal(50f);
+            Destroy(col.gameObject.GetComponent<ParticleSystem>());
             Destroy(col);
-            klin.Heal(10f);
+            
         }
     }
 }
