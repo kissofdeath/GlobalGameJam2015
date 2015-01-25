@@ -12,6 +12,9 @@ GameObject:
   - 50: {fileID: 5017254}
   - 114: {fileID: 11478822}
   - 61: {fileID: 6173798}
+  - 95: {fileID: 9518886}
+  - 111: {fileID: 11171854}
+  - 58: {fileID: 5863086}
   m_Layer: 0
   m_Name: dinklebot
   m_TagString: Untagged
@@ -46,17 +49,57 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
+--- !u!58 &5863086
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 117254}
+  m_Enabled: 1
+  m_Material: {fileID: 6200000, guid: 9c5e387c0285f9f4fa693dfd752391b1, type: 2}
+  m_IsTrigger: 0
+  m_Radius: .209999993
+  m_Center: {x: 0, y: 0}
 --- !u!61 &6173798
 BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 117254}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Size: {x: .25, y: .25}
   m_Center: {x: 0, y: 0}
+--- !u!95 &9518886
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 117254}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: bb83f2f81e90f4b4b8e2a39009266fbd, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+--- !u!111 &11171854
+Animation:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 117254}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: b321101dca15556499e387aecd6c4951, type: 2}
+  m_Animations: []
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!114 &11478822
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -88,7 +131,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 189
-  m_Sprite: {fileID: 21300000, guid: 6e6b4241b83f0a74ba08373c55f88bb2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b10e2e38697a3d54892b94d4aa828cda, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:

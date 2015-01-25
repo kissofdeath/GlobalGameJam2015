@@ -16,13 +16,16 @@ public class DinkleSpawner : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        if (!flag)
+        if (col.gameObject.name == "02.body")
         {
-            flag = true;
-            if (col.gameObject.name == "02.body")
+            if (!flag)
             {
-                animatornator.Play("door.open");
-                Invoke("AnimationStopper", animatornator.animation.clip.length);
+                flag = true;
+                if (col.gameObject.name == "02.body")
+                {
+                    animatornator.Play("door.open");
+                    Invoke("AnimationStopper", animatornator.animation.clip.length);
+                }
             }
         }
     }
