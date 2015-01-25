@@ -7,6 +7,7 @@ public class RayController : MonoBehaviour {
     public float viewportY; 
     public GameObject blast, shield, heal;
     public float moveSpeed;
+    public LayerMask effectsLayers;
 
     private RayMode curRayMode = RayMode.BLAST;
 
@@ -16,8 +17,17 @@ public class RayController : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
-	}
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.B))
+            LetItRain();
+
+        if (Input.GetKey(KeyCode.Q))
+            ProcessInput(-5f);
+
+        if (Input.GetKey(KeyCode.E))
+            ProcessInput(5f);
+    }
 
     public void CycleRayMode()
     {
@@ -59,23 +69,40 @@ public class RayController : MonoBehaviour {
 
     public void LetItRain()
     {
-        Object effect;
-        Debug.Log("Let it rain " + curRayMode);
+
+        Vector2 effectSpawnPos = new Vector2();
+
+        // Need to intelligently spawn the effect such that it stops on colliding a platform. Don't use the y position of
+        // the rays object either - start the cast from the top of the viewport
+        RaycastHit2D hit = Physics2D.Raycast(new Vector2(transform.position.x, Camera.main.ViewportToWorldPoint(new Vector3(0.0f, 1.0f, 0.0f)).y), -Vector2.up, Mathf.Infinity);
+        if (hit.collider != null)
+        {
+            //Debug.DrawRay(transform.position, new Vector3(hit.point.x, hit.point.y, 0), Color.green, 5f);
+            //Debug.Log("Found collider at " + hit.point + " with " + hit.collider.gameObject.name);
+            effectSpawnPos = hit.point;            
+        }
+
+        GameObject prefab = blast; // init
+
         switch (curRayMode)
         {         
             case RayMode.BLAST:
-                effect = Instantiate(blast, transform.position, Quaternion.identity);
+                prefab = blast;
                 break;
 
             case RayMode.SHIELD:
-                effect = Instantiate(shield, transform.position, Quaternion.identity);
+                prefab = shield;
                 break;
 
             case RayMode.HEAL:
-                effect = Instantiate(heal, transform.position, Quaternion.identity);
+                prefab = heal;
                 break;
         }
 
+        //Debug.Log("blast y size" + prefab.collider2D);
+
+        effectSpawnPos.y += 4.67f * 0.5f; // prefab.collider2D.bounds.size.y returns 0 :-/
+        Instantiate(prefab, effectSpawnPos, Quaternion.identity);
         
     }
 
