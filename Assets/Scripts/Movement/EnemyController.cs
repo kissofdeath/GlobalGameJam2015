@@ -11,7 +11,7 @@ public class EnemyController : MonoBehaviour {
 	public float attackRange = 0.4f;
     public float dmg = 20.0f;
 
-	public GameObject playerObject;
+	private GameObject playerObject;
 	private float _leftBound;
 	private float _rightBound;
 	private bool _facingLeft = true;
@@ -20,11 +20,20 @@ public class EnemyController : MonoBehaviour {
 	private float _timeElapsed = 0;
 	private bool _foundPlayer = false;
     private Player playerComp;
+	private Animator animator;
+	enum State{
+		Walk,
+		Idle,
+		Attack
+	};
+	private State _curState = State.Walk;
 	// Use this for initialization
 	void Start () {
+		playerObject = GameObject.Find("klin");
 		_leftBound = transform.position.x - leftRange;
 		_rightBound = transform.position.x + rightRange;
         playerComp = playerObject.GetComponent<Player>();
+		animator = GetComponent<Animator>();
 	}
 
 	void changeFacing(){
@@ -37,11 +46,22 @@ public class EnemyController : MonoBehaviour {
 		_timeElapsed += Time.deltaTime;
 		if(_foundPlayer && Mathf.Abs(CalDistanceVec()) <= attackRange)
 		{
-			renderer.material.color = Color.red;
+			if(_curState != State.Attack)
+			{
+				animator.SetTrigger("ToAttack");
+				_curState = State.Attack;
+			}
+			//renderer.material.color = Color.red;
 		}
 		else
 		{
-			renderer.material.color = Color.white;
+			animator.ResetTrigger("ToAttack");
+			if(_curState == State.Attack)
+			{
+				animator.SetTrigger("ToWalk");
+				_curState = State.Walk;
+			}
+			//renderer.material.color = Color.white;
 		}
 		//Only walk if edge is not hit
 		if(!_edgeHit)
@@ -75,6 +95,11 @@ public class EnemyController : MonoBehaviour {
 	void EdgeReposition()
 	{
 		_edgeHit = false;
+		if(_curState != State.Walk)
+		{
+			animator.SetTrigger("ToWalk");
+			_curState = State.Walk;
+		}
 		if(_isLeftEdge)
 		{
 			transform.position = new Vector3(transform.position.x + 0.1f, transform.position.y, transform.position.z);
@@ -139,6 +164,13 @@ public class EnemyController : MonoBehaviour {
 		if(other.tag == "Edge")
 		{
 			_edgeHit = true;
+
+			if(_curState != State.Idle)
+			{
+				animator.SetTrigger("ToIdle");
+				_curState = State.Idle;
+			}
+
 			if(other.transform.position.x < transform.position.x)
 			{
 				_isLeftEdge  = true;
