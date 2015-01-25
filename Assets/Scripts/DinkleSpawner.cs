@@ -29,7 +29,6 @@ public class DinkleSpawner : MonoBehaviour
 
     void AnimationStopper()
     {
-        Debug.Log("Stopped");
         InvokeRepeating("TurdDropper", 0.0f, 1.0f);
         animatornator.StopPlayback();
     }
@@ -37,6 +36,5 @@ public class DinkleSpawner : MonoBehaviour
     void TurdDropper()
     {
         GameObject.Instantiate(enemyPref, transform.position, Quaternion.identity);
-        Debug.Log("dropping turd");
     }
 }

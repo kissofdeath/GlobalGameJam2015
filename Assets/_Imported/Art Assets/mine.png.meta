@@ -1,0 +1,201 @@
+fileFormatVersion: 2
+guid: ea0c61663a350c24395b6ac4a59d25b4
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: mine_0
+    21300002: mine_1
+    21300004: mine_2
+    21300006: mine_3
+    21300008: mine_4
+    21300010: mine_5
+    21300012: mine_6
+    21300014: mine_7
+    21300016: mine_8
+    21300018: mine_9
+    21300020: mine_10
+    21300022: mine_11
+    21300024: mine_12
+    21300026: mine_13
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: mine_0
+      rect:
+        serializedVersion: 2
+        x: 533
+        y: 34
+        width: 66
+        height: 111
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mine_1
+      rect:
+        serializedVersion: 2
+        x: 621
+        y: 34
+        width: 51
+        height: 111
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mine_2
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 34
+        width: 10
+        height: 111
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mine_3
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 34
+        width: 10
+        height: 111
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mine_4
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 34
+        width: 10
+        height: 111
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mine_5
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 34
+        width: 10
+        height: 111
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mine_6
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 34
+        width: 13
+        height: 111
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mine_7
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 34
+        width: 22
+        height: 111
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mine_8
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 34
+        width: 18
+        height: 111
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mine_9
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 34
+        width: 25
+        height: 111
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mine_10
+      rect:
+        serializedVersion: 2
+        x: 454
+        y: 34
+        width: 43
+        height: 111
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mine_11
+      rect:
+        serializedVersion: 2
+        x: 705
+        y: 34
+        width: 37
+        height: 111
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mine_12
+      rect:
+        serializedVersion: 2
+        x: 781
+        y: 34
+        width: 28
+        height: 111
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mine_13
+      rect:
+        serializedVersion: 2
+        x: 846
+        y: 75
+        width: 19
+        height: 70
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 

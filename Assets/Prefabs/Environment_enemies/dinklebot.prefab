@@ -10,6 +10,8 @@ GameObject:
   - 4: {fileID: 417254}
   - 212: {fileID: 21217254}
   - 50: {fileID: 5017254}
+  - 114: {fileID: 11478822}
+  - 61: {fileID: 6173798}
   m_Layer: 0
   m_Name: dinklebot
   m_TagString: Untagged
@@ -44,6 +46,28 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
+--- !u!61 &6173798
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 117254}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: .25, y: .25}
+  m_Center: {x: 0, y: 0}
+--- !u!114 &11478822
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 117254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e554c8a17238a534780cd5aebb89f462, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &21217254
 SpriteRenderer:
   m_ObjectHideFlags: 1

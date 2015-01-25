@@ -18,4 +18,17 @@ public class DinkleBehaviour : MonoBehaviour
     {
         thisDinkle.AddForce(randomDinkleDirection, ForceMode2D.Impulse);
 	}
+
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        Debug.Log(col.gameObject.name);
+
+        if (col.gameObject.name.Contains("ground"))
+        {
+            //Destroy the dinkle
+            Destroy(this.gameObject);
+
+            //spawn magical explosion
+        }
+    }
 }
