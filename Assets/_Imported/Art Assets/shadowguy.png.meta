@@ -1,0 +1,157 @@
+fileFormatVersion: 2
+guid: 4e70f06393990e342a20598d434090ed
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: shadowguy_0
+    21300002: shadowguy_1
+    21300004: shadowguy_2
+    21300006: shadowguy_3
+    21300008: shadowguy_4
+    21300010: shadowguy_5
+    21300012: shadowguy_6
+    21300014: shadowguy_7
+    21300016: shadowguy_8
+    21300018: shadowguy_9
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: shadowguy_0
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 194
+        width: 45
+        height: 79
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: shadowguy_1
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 194
+        width: 45
+        height: 83
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: shadowguy_2
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 196
+        width: 45
+        height: 79
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: shadowguy_3
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 196
+        width: 45
+        height: 75
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: shadowguy_4
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 110
+        width: 45
+        height: 79
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: shadowguy_5
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 110
+        width: 47
+        height: 79
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: shadowguy_6
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 14
+        width: 45
+        height: 79
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: shadowguy_7
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 14
+        width: 54
+        height: 77
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: shadowguy_8
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 14
+        width: 62
+        height: 88
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: shadowguy_9
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 14
+        width: 54
+        height: 77
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 

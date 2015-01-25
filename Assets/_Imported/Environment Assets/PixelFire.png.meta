@@ -1,0 +1,242 @@
+fileFormatVersion: 2
+guid: 66b81cd28bbed224db173a64d8f484dc
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: PixelFire_0
+    21300002: PixelFire_1
+    21300004: PixelFire_2
+    21300006: PixelFire_3
+    21300008: PixelFire_4
+    21300010: PixelFire_5
+    21300012: PixelFire_6
+    21300014: PixelFire_7
+    21300016: PixelFire_8
+    21300018: PixelFire_9
+    21300020: PixelFire_10
+    21300022: PixelFire_11
+    21300024: PixelFire_12
+    21300026: PixelFire_13
+    21300028: PixelFire_14
+    21300030: PixelFire_15
+    21300032: PixelFire_16
+    21300034: PixelFire_17
+    21300036: PixelFire_10
+    21300038: PixelFire_11
+    21300040: PixelFire_12
+    21300042: PixelFire_13
+    21300044: PixelFire_14
+    21300046: PixelFire_15
+    21300048: PixelFire_16
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: PixelFire_10
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 37
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PixelFire_11
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 37
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PixelFire_12
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 37
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PixelFire_13
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 37
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PixelFire_14
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 37
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PixelFire_15
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 37
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PixelFire_16
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 37
+        width: 12
+        height: 13
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PixelFire_17
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 20
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PixelFire_8
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 20
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PixelFire_9
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 20
+        width: 12
+        height: 9
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PixelFire_10
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 20
+        width: 12
+        height: 9
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PixelFire_11
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 20
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PixelFire_12
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 20
+        width: 12
+        height: 9
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PixelFire_13
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 20
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PixelFire_14
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 20
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PixelFire_15
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 3
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PixelFire_16
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 3
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 

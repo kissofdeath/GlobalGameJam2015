@@ -1,0 +1,278 @@
+fileFormatVersion: 2
+guid: 977daa43fc9d0c844b58b589c03aba69
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: grassguy_0
+    21300002: grassguy_1
+    21300004: grassguy_2
+    21300006: grassguy_3
+    21300008: grassguy_4
+    21300010: grassguy_5
+    21300012: grassguy_6
+    21300014: grassguy_7
+    21300016: grassguy_8
+    21300018: grassguy_9
+    21300020: grassguy_10
+    21300022: grassguy_11
+    21300024: grassguy_12
+    21300026: grassguy_13
+    21300028: grassguy_14
+    21300030: grassguy_15
+    21300032: grassguy_16
+    21300034: grassguy_17
+    21300036: grassguy_18
+    21300038: grassguy_19
+    21300040: grassguy_20
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: grassguy_0
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 222
+        width: 40
+        height: 45
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: grassguy_1
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 216
+        width: 43
+        height: 60
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: grassguy_2
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 216
+        width: 43
+        height: 60
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: grassguy_3
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 216
+        width: 43
+        height: 60
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: grassguy_4
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 216
+        width: 43
+        height: 60
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: grassguy_5
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 159
+        width: 40
+        height: 45
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: grassguy_6
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 159
+        width: 40
+        height: 44
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: grassguy_7
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 159
+        width: 40
+        height: 42
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: grassguy_8
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 104
+        width: 40
+        height: 45
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: grassguy_9
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 104
+        width: 43
+        height: 45
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: grassguy_10
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 50
+        width: 40
+        height: 45
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: grassguy_11
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 50
+        width: 37
+        height: 33
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: grassguy_12
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 50
+        width: 37
+        height: 28
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: grassguy_13
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 50
+        width: 40
+        height: 27
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: grassguy_14
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 50
+        width: 33
+        height: 27
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: grassguy_15
+      rect:
+        serializedVersion: 2
+        x: 246
+        y: 49
+        width: 27
+        height: 27
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: grassguy_16
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 17
+        width: 27
+        height: 27
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: grassguy_17
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 17
+        width: 27
+        height: 27
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: grassguy_18
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 17
+        width: 27
+        height: 27
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: grassguy_19
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 17
+        width: 27
+        height: 27
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: grassguy_20
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 17
+        width: 27
+        height: 27
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
