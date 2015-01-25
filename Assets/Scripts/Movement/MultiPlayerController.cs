@@ -197,7 +197,7 @@ public class MultiPlayerController : MonoBehaviour {
         {
             rays.ProcessInput(raysX);
 
-            if (changeRayMode)
+            if (changeRayMode.WasPressed)
                 rays.CycleRayMode();
 
             if (rainRays.WasPressed)

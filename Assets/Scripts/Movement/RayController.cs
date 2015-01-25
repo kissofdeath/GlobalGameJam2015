@@ -8,17 +8,23 @@ public class RayController : MonoBehaviour {
     public GameObject blast, shield, heal;
     public float moveSpeed;
     public LayerMask effectsLayers;
+    public float[] coolDowns = { 3f, 4f, 6f };
+    private float[] timeSinceLastUsed = {10f, 10f, 10f};
 
+    private Color[] rayModeColors = { Color.red, Color.blue, Color.green };
     private RayMode curRayMode = RayMode.BLAST;
 
 	// Use this for initialization
 	void Start () {
-     
+        renderer.material.color = rayModeColors[(uint)curRayMode];        
 	}
 	
 	// Update is called once per frame
     void Update()
     {
+        for (int ii = 0; ii < timeSinceLastUsed.Length; ii++)
+            timeSinceLastUsed[ii] += Time.deltaTime; // while pausing via Time.timescale = 0, Time.deltatime will be 0. So cooldowns wont be affected by pause.
+
         if (Input.GetKeyDown(KeyCode.B))
             LetItRain();
 
@@ -35,6 +41,8 @@ public class RayController : MonoBehaviour {
             curRayMode = RayMode.BLAST;
         else
             curRayMode++;
+
+        renderer.material.color = rayModeColors[(uint)curRayMode];
     }
 
     public void ProcessInput(float x)
@@ -69,6 +77,10 @@ public class RayController : MonoBehaviour {
 
     public void LetItRain()
     {
+        if (timeSinceLastUsed[(uint)curRayMode] < coolDowns[(uint)curRayMode]) {
+            Debug.Log("Cooldown...hold your horses.");
+            return;
+        }
 
         Vector2 effectSpawnPos = new Vector2();
 
@@ -103,7 +115,8 @@ public class RayController : MonoBehaviour {
 
         effectSpawnPos.y += 4.67f * 0.5f; // prefab.collider2D.bounds.size.y returns 0 :-/
         Instantiate(prefab, effectSpawnPos, Quaternion.identity);
-        
+
+        timeSinceLastUsed[(uint)curRayMode] = 0f;        
     }
 
 }

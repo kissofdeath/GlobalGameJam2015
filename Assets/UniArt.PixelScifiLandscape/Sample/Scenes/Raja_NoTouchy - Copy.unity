@@ -72917,11 +72917,15 @@ MonoBehaviour:
   viewportY: 1.5
   blast: {fileID: 105552, guid: 4acc1a4b3c39d8c488cebf7990a802b0, type: 2}
   shield: {fileID: 116266, guid: 0d0f63365bd528f458c991c72acbe462, type: 2}
-  heal: {fileID: 116266, guid: 0d0f63365bd528f458c991c72acbe462, type: 2}
+  heal: {fileID: 105552, guid: e81e79c7f6262d44e8573773a878dc2c, type: 2}
   moveSpeed: 1
   effectsLayers:
     serializedVersion: 2
     m_Bits: 4294967035
+  coolDowns:
+  - 3
+  - 4
+  - 6
 --- !u!1 &1283657365
 GameObject:
   m_ObjectHideFlags: 0
