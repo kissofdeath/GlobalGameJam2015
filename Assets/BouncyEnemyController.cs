@@ -5,20 +5,24 @@ public class BouncyEnemyController : MonoBehaviour {
 	public float jumpInterval = 3.0f;
 	public const float gravity = 2.0f;
 	public float rotateSpeed = 6.0f;
+    public float dmg = 20.0f;
 	private float _timeElapsed = 0;
 	private float _initGndLvl;
 	private Vector2 _velocity;
-	private GameObject _playerObject;
+	public GameObject playerObject;
 	private bool _facingLeft = true;
 	private bool _isJumping = false;
 	private float _rotAngle = 0;
 	private bool _foundPlayer = false;
 	private Vector3 _initPosition;
+    private Player playerComp;
+
+
 	// Use this for initialization
 	void Start () {
 		_initGndLvl = transform.position.y;
 		_velocity = Vector2.zero;
-		_playerObject = GameObject.FindGameObjectWithTag("Player");
+        playerComp = playerObject.GetComponent<Player>();
 		_initPosition = transform.position;
 	}
 	
@@ -31,7 +35,7 @@ public class BouncyEnemyController : MonoBehaviour {
 		}
 		else if(Mathf.Abs(CalDistanceVec()) < 0.4f)
 		{
-			renderer.material.color = Color.red;
+			renderer.material.color = Color.red;            
 		}
 		else
 		{
@@ -161,6 +165,10 @@ public class BouncyEnemyController : MonoBehaviour {
 			_velocity = new Vector2(0, _velocity.y);
 			_foundPlayer = false;
 		}
+        else if (other.tag == "Player")
+        {
+            playerComp.Damage(dmg);
+        }
 	}
 	
 	void ResetToInitGndLvl(){
@@ -173,7 +181,7 @@ public class BouncyEnemyController : MonoBehaviour {
 		_facingLeft = !_facingLeft;
     }
 	float CalDistanceVec(){
-		Vector3 playerPos = _playerObject.transform.position;
+		Vector3 playerPos = playerObject.transform.position;
 		Vector3 enemyPos = transform.position;
 		float distanceVec = playerPos.x - enemyPos.x;
 		return distanceVec;

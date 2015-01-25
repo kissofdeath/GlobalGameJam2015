@@ -9,7 +9,9 @@ public class EnemyController : MonoBehaviour {
 	public float chaseSpeed = 0.7f;
 	public float timeOnEdge = 5.0f;
 	public float attackRange = 0.4f;
-	private GameObject _playerObject;
+    public float dmg = 20.0f;
+
+	public GameObject playerObject;
 	private float _leftBound;
 	private float _rightBound;
 	private bool _facingLeft = true;
@@ -17,11 +19,12 @@ public class EnemyController : MonoBehaviour {
 	private bool _isLeftEdge;
 	private float _timeElapsed = 0;
 	private bool _foundPlayer = false;
+    private Player playerComp;
 	// Use this for initialization
 	void Start () {
 		_leftBound = transform.position.x - leftRange;
 		_rightBound = transform.position.x + rightRange;
-		_playerObject = GameObject.FindGameObjectWithTag("Player");
+        playerComp = playerObject.GetComponent<Player>();
 	}
 
 	void changeFacing(){
@@ -61,8 +64,8 @@ public class EnemyController : MonoBehaviour {
 				changeFacing();
 				EdgeReposition();
 			}
-			else if((_playerObject.transform.position.x - transform.position.x < 0 && !_isLeftEdge) ||
-			        (_playerObject.transform.position.x - transform.position.x > 0 && _isLeftEdge))
+			else if((playerObject.transform.position.x - transform.position.x < 0 && !_isLeftEdge) ||
+			        (playerObject.transform.position.x - transform.position.x > 0 && _isLeftEdge))
 			{
 				EdgeReposition();
             }
@@ -146,13 +149,17 @@ public class EnemyController : MonoBehaviour {
 			}
 			_timeElapsed = 0;
 		}
+        else if (other.tag == "Player")
+        {
+            playerComp.Damage(dmg);
+        }
 	}
 	public void FoundPlayer()
 	{
 		_foundPlayer = true;
 	}
 	float CalDistanceVec(){
-		Vector3 playerPos = _playerObject.transform.position;
+		Vector3 playerPos = playerObject.transform.position;
 		Vector3 enemyPos = transform.position;
 		float distanceVec = playerPos.x - enemyPos.x;
 		return distanceVec;
