@@ -39,6 +39,10 @@ public class Blast : MonoBehaviour {
             Debug.Log("Blast just pwned" + c.gameObject.name);
             Destroy(c.gameObject);
         }
+        else if (c.gameObject.name == "02.body")
+        {
+            c.GetComponentInParent<Player>().Damage(40f);
+        }
     }
 
     void KillMe()

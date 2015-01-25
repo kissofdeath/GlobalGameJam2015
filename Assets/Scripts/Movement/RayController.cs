@@ -11,12 +11,13 @@ public class RayController : MonoBehaviour {
     public float[] coolDowns = { 3f, 4f, 6f };
     private float[] timeSinceLastUsed = {10f, 10f, 10f};
 
-    private Color[] rayModeColors = { Color.red, Color.blue, Color.green };
+    private Color[] rayModeActiveColors = { Color.red, Color.blue, Color.green };
+    private Color[] rayModeCooldownColors = { new Color(0.6f, 0.0f, 0.0f, 0.6f), new Color(0.0f, 0.0f, 0.6f, 0.6f), new Color(0.0f, 0.6f, 0.0f, 0.6f) };
     private RayMode curRayMode = RayMode.BLAST;
 
 	// Use this for initialization
 	void Start () {
-        renderer.material.color = rayModeColors[(uint)curRayMode];        
+        renderer.material.color = rayModeActiveColors[(uint)curRayMode];        
 	}
 	
 	// Update is called once per frame
@@ -33,6 +34,13 @@ public class RayController : MonoBehaviour {
 
         if (Input.GetKey(KeyCode.E))
             ProcessInput(5f);
+
+        if (SpellAvailable(curRayMode))
+            renderer.material.color = rayModeActiveColors[(uint)curRayMode];
+        else
+        {
+            renderer.material.color = rayModeCooldownColors[(uint)curRayMode];
+        }
     }
 
     public void CycleRayMode()
@@ -40,10 +48,15 @@ public class RayController : MonoBehaviour {
         if (curRayMode == RayMode.HEAL)
             curRayMode = RayMode.BLAST;
         else
-            curRayMode++;
-
-        renderer.material.color = rayModeColors[(uint)curRayMode];
+            curRayMode++;        
     }
+
+
+    private bool SpellAvailable(RayMode rm)
+    {
+        return (timeSinceLastUsed[(uint)rm] > coolDowns[(uint)rm]);
+    }
+
 
     public void ProcessInput(float x)
     {
@@ -77,7 +90,7 @@ public class RayController : MonoBehaviour {
 
     public void LetItRain()
     {
-        if (timeSinceLastUsed[(uint)curRayMode] < coolDowns[(uint)curRayMode]) {
+        if (!SpellAvailable(curRayMode)) {
             Debug.Log("Cooldown...hold your horses.");
             return;
         }
@@ -86,7 +99,7 @@ public class RayController : MonoBehaviour {
 
         // Need to intelligently spawn the effect such that it stops on colliding a platform. Don't use the y position of
         // the rays object either - start the cast from the top of the viewport
-        RaycastHit2D hit = Physics2D.Raycast(new Vector2(transform.position.x, Camera.main.ViewportToWorldPoint(new Vector3(0.0f, 1.0f, 0.0f)).y), -Vector2.up, Mathf.Infinity);
+        RaycastHit2D hit = Physics2D.Raycast(new Vector2(transform.position.x, Camera.main.ViewportToWorldPoint(new Vector3(0.0f, 1.0f, 0.0f)).y), -Vector2.up, Mathf.Infinity, effectsLayers);
         if (hit.collider != null)
         {
             //Debug.DrawRay(transform.position, new Vector3(hit.point.x, hit.point.y, 0), Color.green, 5f);
