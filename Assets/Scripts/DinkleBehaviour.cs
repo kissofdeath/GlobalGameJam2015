@@ -42,6 +42,12 @@ public class DinkleBehaviour : MonoBehaviour
             col.gameObject.GetComponentInParent<Player>().Damage(25);
             TheDinkleStopper();
         }
+
+        if (col.gameObject.name.Contains("shield"))
+        {
+            col.gameObject.GetComponentInParent<Player>().Damage(25);
+            TheDinkleStopper();
+        }
     }
 
     void TheDinkleStopper()
