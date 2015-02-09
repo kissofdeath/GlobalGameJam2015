@@ -44,7 +44,7 @@ public class EnemyController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		_timeElapsed += Time.deltaTime;
-		if(_foundPlayer && Mathf.Abs(CalDistanceVec()) <= attackRange)
+		if(_foundPlayer && Mathf.Abs(CalDistanceVec().magnitude) <= attackRange)
 		{
 			if(_curState != State.Attack)
 			{
@@ -131,29 +131,29 @@ public class EnemyController : MonoBehaviour {
         }
     }
 	void ChasePlayer(){
-		float distanceVec = CalDistanceVec();
+		Vector2 distanceVec = CalDistanceVec();
 		if(_facingLeft)
 		{
-			if(distanceVec > 0)
+			if(distanceVec.x > 0)
 			{
 				changeFacing();
 			}
 		}
 		else
 		{
-			if(distanceVec <= 0)
+			if(distanceVec.x <= 0)
 			{
 				changeFacing();
 			}
 		}
 		//Coming toward the player (only enough to attack it)
-		if(Mathf.Abs(distanceVec) >= attackRange)
+		if(distanceVec.magnitude >= attackRange)
 		{
-			if(distanceVec <= 0)
+			if(distanceVec.x <= -0.1)
 			{
 				transform.position = new Vector3(transform.position.x - Time.deltaTime * chaseSpeed, transform.position.y, transform.position.z);
 			}
-			else
+			else if(distanceVec.x > 0.1)
 			{
 				transform.position = new Vector3(transform.position.x + Time.deltaTime * chaseSpeed, transform.position.y, transform.position.z);
 			}
@@ -163,6 +163,7 @@ public class EnemyController : MonoBehaviour {
 	{
 		if(other.tag == "Edge")
 		{
+			Debug.Log("Hit edge");
 			_edgeHit = true;
 
 			if(_curState != State.Idle)
@@ -190,10 +191,9 @@ public class EnemyController : MonoBehaviour {
 	{
 		_foundPlayer = true;
 	}
-	float CalDistanceVec(){
+	Vector2 CalDistanceVec(){
 		Vector3 playerPos = playerObject.transform.position;
 		Vector3 enemyPos = transform.position;
-		float distanceVec = playerPos.x - enemyPos.x;
-		return distanceVec;
+		return (new Vector2(playerPos.x - enemyPos.x, playerPos.y - enemyPos.y));
     }
 }
